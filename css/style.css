@@ -80,6 +80,7 @@ a:hover{
 	box-shadow: 0 .2rem .5rem black;
 	text-align: center; 
 	cursor: pointer;
+	color: white;
   }
   
   .background {
