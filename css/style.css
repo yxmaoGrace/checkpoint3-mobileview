@@ -7,7 +7,7 @@ body{
 
 
 /* display navigation bar in flex */
-header{
+/* header{
 	display:flex;
 	flex-direction: column;
 	align-items: center;
@@ -16,8 +16,7 @@ header{
   .nav_links{
 	display: flex;
 	flex-direction: column;
-  }
-
+  } */
 
 
 /*Change the styling for items in the nav section*/
@@ -53,14 +52,139 @@ a:hover{
 	color: #555408;
 }
 
+
+/* Creating a hamburger menu for navigation bar */
+label .menu {
+	position: absolute;
+	right: -100px;
+	top: -100px;
+	z-index: 100;
+	width: 200px;
+	height: 200px;
+	background: #c2dab6;
+	border-radius: 50% 50% 50% 50%;
+	-webkit-transition: .5s ease-in-out;
+	transition: .5s ease-in-out;
+	box-shadow: 0 0 0 0 #FFF, 0 0 0 0 #FFF;
+	cursor: pointer;
+  }
+
+label .hamburger {
+	position: absolute;
+	top: 150px;
+	left: -5px;
+	width: 30px;
+	height: 2px;
+	background: #183d08;
+	display: block;
+	-webkit-transform-origin: center;
+	transform-origin: center;
+	-webkit-transition: .5s ease-in-out;
+	transition: .5s ease-in-out;
+  }
+
+  label .hamburger:after, label .hamburger:before {
+	-webkit-transition: .5s ease-in-out;
+	transition: .5s ease-in-out;
+	content: "";
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: #183d08;
+  }
+  
+  label .hamburger:before { top: -10px; }
+  
+  label .hamburger:after { bottom: -10px; }
+  
+  label input { display: none; }
+  
+  label input:checked + .menu {
+	box-shadow: 0 0 0 60vw #FFF, 0 0 0 60vh #FFF;
+	border-radius: 10%;
+  }
+  
+  label input:checked + .menu .hamburger {
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	
+  }
+  
+  label input:checked + .menu .hamburger:after {
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+	bottom: 0;
+	
+  }
+  
+  label input:checked + .menu .hamburger:before {
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+	top: 0;
+	
+  }
+  
+  label input:checked + .menu + ul { opacity: 1; }
+  
+  label ul {
+	z-index: 200;
+	position: absolute;
+	top: 40%;
+	right: 10%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	opacity: 0;
+	-webkit-transition: 0s .5s ease-in-out;
+	transition: 0s .5s ease-in-out;
+  }
+
+
+
+
+/* skip back to main content */
 .back{
 	margin: 5px;
 	border: 2px solid #38721d;
 	padding: 2px;
-	width: 50%;
-	display: inline-block;
+	width: 20%;
 	text-align: center;
+	transition: left 1s ease-out;
+	z-index: 1;
+	/* Requirement 3 code here*/
+	position: absolute;
+	left: -500px;
 }
+
+a.back:focus{
+    position: absolute;
+    left: 0px;
+    top: 20px;
+    border-top: solid #f3f17e 2px;
+  } 
+
+
+/* Animate the logo */
+#logo{
+	position: relative;
+	margin: 20px auto;
+	animation-name: lgmove;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+	width: 200px;
+  }
+
+  @keyframes lgmove {
+	from {
+	  transform: rotate(-30deg) translateY(-100%);
+	  opacity: 0;
+	}
+	to {
+	  transform: rotate(0deg) translateY(0%);
+	  opacity: 1.0;
+	}
+  }
+
 
 
 /* Style the headings*/
@@ -72,7 +196,6 @@ h1{
 .title{
 	text-align: center;
 }
-
 
 h2{
 	font-size: 25px;
@@ -89,37 +212,42 @@ h3 span{
 }
 
 
-/*Style the images*/
-img{
-    height: 300px;
-    width:auto;
-    padding: 10px;
-    border-radius: 10px;
-    margin: 30px;
-	opacity:0.8;
+/* Style the paragraphs */
+p{
+	margin: 10px;
 }
 
-img:nth-child(odd){
+
+/*Style the images*/
+main img{
+    max-height: 300px;
+    width:60%;
+    padding: 2px;
+    border-radius: 10px;
+    margin: 5px auto;
+	opacity:0.8;
+	display: block;
+}
+
+main img:nth-child(odd){
     border: 3px dashed #38721d;
 }
 
-img:nth-child(even){
+main img:nth-child(even){
 	border: 3px dotted #969303;
 }
 
-img:hover{
-	width:auto;
+main img:hover{
+	width:60%;
 	opacity:1;
-	transition: .5s ease;
+	transition: 1s ease;
 }
 
-img:nth-child(odd):hover{
-	 height: 310px;
+main img:nth-child(odd):hover{
 	 box-shadow: 5px 5px 4px 5px #c2dab6;
  }
 
- img:nth-child(even):hover{
-	height: 290px;
+main img:nth-child(even):hover{
 	box-shadow: 5px 5px 4px 5px #f3f17e;
 }
 
@@ -148,34 +276,28 @@ img:nth-child(odd):hover{
 	color: red;
 }
 
-/* creating grids for childhood and world page. */
-.container{
+/* creating grids for childhood page. */
+.gridContainer{
 	display: grid;
-	grid-template-columns: 2fr 2fr 2fr;
+	grid-template-columns: 1fr 1fr 1fr;
 	row-gap: 30px;
 }
 
 .beefNoodle,
 .lamb,
-.luosifen,
-.salsas,
-.kimchi{
+.luosifen{
   grid-column: 1 /span 2;
 }
 
 .hotPot,
-.stirFry,
-.tomYum,
-.sik{
+.stirFry{
   grid-column: 2 /span 2;
 }
 
 
 .beefNoodle_image,
 .lamb_image,
-.luosifen_image,
-.salsas_image,
-.kimchi_image{
+.luosifen_image{
   grid-column: 2 / span 2;
   max-height: 500px;
   overflow: hidden;
@@ -184,9 +306,7 @@ img:nth-child(odd):hover{
 }
 
 .hotPot_image,
-.stirFry_image
-.tomYum_image,
-.sik_image{
+.stirFry_image{
   grid-column: 1 / span 2;
   max-height: 500px;
   overflow: hidden;
@@ -195,7 +315,6 @@ img:nth-child(odd):hover{
 }
 
 
-/* requirement A */
 .beefNoodle, .beefNoodle_image{
   grid-row: 1 / 2;
 }
@@ -216,22 +335,6 @@ img:nth-child(odd):hover{
 	grid-row: 5 / 6;
 }
 
-.salsas, .salsas_image{
-	grid-row: 1 / 2;
-  }
-  
-  .tomYum,.tomYum_image{
-	grid-row: 2 / 3;
-  }
-  
-  .kimchi, .kimchi_image{
-	grid-row: 3 / 4;
-  }
-  
-  .sik, .sik_image{
-	grid-row: 4 / 5;
-  }  
-
 
 .text{
   align-self:center;
@@ -247,12 +350,20 @@ img:nth-child(odd):hover{
   }  
 
 
-/* image gallery */
-.gallery{
+
+/* Creating flex for Around the World page. */
+.flexContainer{
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
+	flex-direction: column;
 }
+
+.salsas,
+.tomYum,
+.kimchi,
+.sik{
+	margin: 20px 10px;
+}
+
 
 
 /* style the footer */
@@ -261,4 +372,28 @@ footer{
 	text-align: center;
 	color: #555408;
 	font-weight: bolder;
+	background-color:#c2dab6;
+	margin: 20px;
+}
+
+
+/** Set for prefers reduced motion **/
+@media screen and (prefers-reduced-motion: reduce){
+	#logo{
+	  animation: none;
+	}
+	html{
+		scroll-behavior: auto; /* Removes scroll animation */
+	  }
+	
+	  /*Turn off transition*/
+	  a.back {
+		-webkit-transition: initial; /* sets to default setting */
+		transition: initial; /* sets to default setting */
+	  }
+	
+	  /*Turn off parallax*/
+	  .intro{
+		background-attachment: initial;
+	}
 }

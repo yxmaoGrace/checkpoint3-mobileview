@@ -5,10 +5,11 @@
   } */
   
   form {
-	margin: 20px auto;
+	margin: 30px;
 	border: 3px solid #f1f1f1;
 	padding: 20px;
   }
+
 
   legend{
 	  font-size: 2em;
@@ -51,11 +52,6 @@
 	box-sizing: border-box;
   }
   
-  
-  input[type=checkbox]{
-	  display:inline;
-	  width:inherit;
-  }
   
   input[type=submit] {
 	display: block;

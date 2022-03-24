@@ -28,13 +28,17 @@
 <body>
 	<a class="back" href="#main">Skip to Main Content</a>
 	<header>
-		<nav>
+		<img src="images/logo.jpeg" alt="" id = "logo">
+		<label>
+			<input type="checkbox">
+			<span class="menu"> <span class="hamburger"></span> </span>
 			<ul class="nav_links">
 				<li class="active nav_item"><a href = "index.html" >About Me</a></li>
 				<li class="nav_item"><a href = "childhood.html">Childhood Memories</a></li>
 				<li class="nav_item"><a href = "world.html">Around the World</a></li>
 				<li  class="nav_item"><a href = "scale.html">Scoville Scale</a></li>
 			</ul>
+			</label>
 		</nav>
 		<h1 id="main" class="title">About Me</h1>
 	</header>
@@ -45,7 +49,7 @@
 			population of different ethnicities, I got the chance to taste food 
 			with diverse flavors. With all kinds of food using different spices, 
 			ingredients, and cooking methods, my all time favorite flavor is SPICINESS.</p>
-			<img src = "images/familymeal.jpg" alt = "I like having meals with my family as a young girl." width="200"/>
+			<img src = "images/familymeal.jpg" alt = "Having meals with my family are my precious memories as a young girl." width="200"/>
 
 		<p>For me, spiciness is a strong, pungent flavor that always brings excitement 
 			and comfort. It is a flavor that stimulates my taste buds and makes any 
@@ -72,11 +76,11 @@
 		  <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required="">
 			
 
-		  <label for="phone_num"><i class="fa-solid fa-phone fa-lg"></i> Phone Number</label>
+		  <label for="phone_num"><i class="fa-solid fa-phone fa-lg"></i>Phone Number</label>
 		  <input type="tel" name="phone_num" id="phone_num" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required="">
 			
 		  
-		  <label for="message"><i class="fa-solid fa-message fa-lg"></i> Message</label>
+		  <label for="message"><i class="fa-solid fa-message fa-lg"></i>Message</label>
 		  <textarea rows="5" name="message" id="message" placeholder="Please leave any message or questions you have." required=""></textarea>
 			
 		  <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
