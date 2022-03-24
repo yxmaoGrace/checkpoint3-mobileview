@@ -167,7 +167,7 @@ a.back:focus{
 /* Animate the logo */
 #logo{
 	position: relative;
-	margin: 20px auto;
+	margin: 20px 10px;
 	animation-name: lgmove;
 	animation-duration: 1s;
 	animation-timing-function: linear;
