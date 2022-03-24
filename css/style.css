@@ -80,7 +80,7 @@ a:hover{
 	box-shadow: 0 .2rem .5rem black;
 	text-align: center; 
 	cursor: pointer;
-	color: white;
+	color: black;
   }
   
   .background {
@@ -176,7 +176,7 @@ a:hover{
   /* styling hamb ICON */
   .icon {
 	position: absolute;
-	top: 55%;
+	top: 60%;
 	left: 35%;
 	transform: translate(-50%, -50%);
   }
@@ -185,7 +185,7 @@ a:hover{
   .icon::before,
   .icon::after {
 	width: 1.5rem;
-	height: 2px;
+	height: 5px;
 	background-color: gray;
 	display: inline-block;
   }
